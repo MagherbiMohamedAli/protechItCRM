@@ -1,0 +1,58 @@
+<body style="background-image: url('../assets/images/protechbg.jpg');">
+    <div class="wrapper">
+        <h2>Se connecter</h2>
+        <form #form="ngForm" [formGroup]="credentialForm" (ngSubmit)="form.form.valid && connexion (form)">
+
+            <div class="input-box">
+                <input type="text" name="email" id="email" placeholder="Votre email" formControlName="email"
+                    [(ngModel)]="loginReq.email" required>
+            </div>
+            <div *ngIf="(email?.dirty || email?.touched) && email?.errors" class="errors">
+                <span *ngIf="email?.errors?.['required']" style="color: red;">*Email Obligatoire</span>
+                <span *ngIf="email?.errors?.['email']" style="color: red;">Email invalide</span>
+            </div>
+
+            <div class="input-box">
+                <input type="password" name="password" formControlName="password" id="password"
+                    placeholder="Votre mot de passe" [(ngModel)]="loginReq.password" required>
+            </div>
+            <div *ngIf="(password?.dirty || password?.touched) && password?.errors" class="errors">
+                <span *ngIf="password?.errors?.['required']" style="color: red;">*Mot de passe Obligatoire</span>
+                <span *ngIf="password?.errors?.['minlength']" style="color: red;">Mot de passe doit etre au moins 6
+                    caracteres</span>
+            </div>
+
+
+            <div class="input-box button">
+                <input type="Submit" (click)="signIn()" value="Se connecter">
+
+            </div>
+          
+            <hr style="width: 70%; border-color: black; margin-left: 53px;">
+
+            <p style="color: grey; text-align: center;">Ou bien connectez-vous avec:</p>
+
+         <!--    <div class="social" style="margin-bottom: 3 0px;">
+                <button (click)="signInWithFB()"
+                    style="display: inline-block; vertical-align: middle; margin-left: 120px; border-color: white; border-radius: 20px;">
+
+                    <img src="../assets/images/facebook.ico" alt="fbLogo" style="width: 25px; height: 25px;">
+
+                </button>
+                <asl-google-signin-button *ngIf="!user"
+                    style="display: inline-block; vertical-align: middle; margin-left: 50px;">
+                    <div *ngIf="user">
+                        <img src="{{user.photoUrl}}">
+                        <div>
+                            <h4>{{user.nomEtPrenom}}</h4>
+                            <p>{{user.email}}</p>
+                        </div>
+                    </div>
+                </asl-google-signin-button>
+            </div> -->
+            <a routerLink="/signup" style="margin-left: 125px;">Vous n'avez pas de compte ?</a>
+
+
+        </form>
+    </div>
+</body>

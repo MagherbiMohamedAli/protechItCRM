@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+<div style="text-align: center; margin-top: 20px;">
+  <a href="/faq" class="btn btn-danger" style="width: 100px; font-family: 'Courier New', Courier, monospace;">
+    <b>FAQ</b></a>
+</div>
+<div class="container-fluid" style="margin-top: 20px; margin-bottom: 100px;">
+
+  <div class="row" style="margin-left: 50px;">
+
+    <div class="col-4">
+
+      <div class="card" style="width: 25rem; height: 500px;">
+        <img class="card-img-top" src="../assets/images/chat.png" alt="chat" style="height: 1000px;">
+        <div class="card-body" style="text-align: center;">
+          <h5 class="card-title">Chatter avec un personnel </h5>
+          <p class="card-text">Parlez en temps réel avec un des peronnels de Protech-it si vous n'avez pas trouvez votre
+            question dans la section FAQ. Vous devez vous connecter pour utilisé cette fonctionnalité.</p>
+          <a href="/chat" style="padding-top: 5px; background-color: #14213d; margin-top: -5px; border-radius: 0%;"
+            class="btn btn-light" role="button" aria-pressed="true"><b style="color: white;">Chatter!</b></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card" style="width: 25rem; height: 500px;">
+        <img class="card-img-top" src="../assets/images/form.jpg" alt="formulaire" style="height: 295px;">
+        <div class="card-body" style="text-align: center;">
+          <h5 class="card-title">Remplir le formulaire</h5>
+          <p style="margin-bottom: 20px; margin-top: 30px;" class="card-text">Remplissez un formulaire, on vous répond sur un e-mail au
+            bout de 24 heures</p>
+          <a href="/form"
+            style="margin-left: 20px; padding-top: 5px; background-color: #14213d; margin-top: 10px; border-radius: 0%;"
+            class="btn btn-light" role="button" aria-pressed="true"><b style="color: white;">Remplir le
+              formulaire</b></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card" style="width: 25rem; height: 500px;">
+        <img class="card-img-top" src="../assets/images/contact-us.png" alt="phone" style="height: 300px;">
+        <div class="card-body" style="text-align: center;">
+          <h5 class="card-title">Téléphoner </h5>
+          <p style="margin-bottom: 20px; margin-top: 40px;" class="card-text">Appelez-nous sur nos lignes téléphoniques</p>
+          <a style="margin-left: 20px; padding-top: 5px; background-color: #14213d; margin-top: 20px; border-radius: 0%;"
+            class="btn btn-light" role="button" aria-pressed="true" (click)="callus()"><b
+              style="color: white;">Appelez-nous</b></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

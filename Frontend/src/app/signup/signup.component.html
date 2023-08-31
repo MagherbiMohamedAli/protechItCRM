@@ -1,0 +1,57 @@
+<body style="background-image: url('../assets/images/protechbg.jpg');">
+  <div class="wrapper">
+    <h2>S'inscrire</h2>
+
+    <form #form="ngForm" [formGroup]="credentialForm" (ngSubmit)="form.form.valid && inscrit(form) ">
+      <div class="input-box">
+        <input type="text" name="username" formControlName="username" placeholder="Votre nom et prenom" required
+          [(ngModel)]="user.username">
+      </div>
+      <div *ngIf="(username?.dirty || username?.touched) && username?.errors" class="errors">
+        <span *ngIf="username?.errors?.['required']" style="color: red;">*Nom d'utilisateur Obligatoire</span>
+        <span *ngIf="username?.errors?.['minlength']" style="color: red;">Nom d'utilisateur doit etre au moins 3
+          caracteres</span>
+      </div>
+
+      <div class="input-box">
+        <input type="email" name="email" formControlName="email" placeholder="Votre email" required
+          [(ngModel)]="user.email" required="">
+      </div>
+      <div *ngIf="(email?.dirty || email?.touched) && email?.errors" class="errors">
+        <span *ngIf="email?.errors?.['required']" style="color: red;">*Email Obligatoire</span>
+        <span *ngIf="email?.errors?.['email']" style="color: red;">Email invalide</span>
+      </div>
+
+      <div class="input-box">
+        <input type="date" name="birthday" formControlName="birthday" placeholder="Date de naissance" required
+          [(ngModel)]="user.birthday">
+      </div>
+      <div *ngIf="(birthday?.dirty || birthday?.touched) && birthday?.errors" class="errors">
+        <span *ngIf="birthday?.errors?.['required']" style="color: red;">*Date de naissance Obligatoire</span>
+      </div>
+
+      <div class="input-box">
+        <input type="password" formControlName="password" name="password" placeholder="Créer un mot de passe" required
+          [(ngModel)]="user.password">
+      </div>
+
+      <div *ngIf="(password?.dirty || password?.touched) && password?.errors" class="errors">
+        <span *ngIf="password?.errors?.['required']" style="color: red;">*Mot de passe Obligatoire</span>
+        <span *ngIf="password?.errors?.['minlength']" style="color: red;">Mot de passe doit etre au moins 6
+          caracteres</span>
+      </div>
+
+      <div class="input-box">
+        <input type="password" placeholder="Confirmer votre mot de passe">
+      </div>
+
+
+      <div class="input-box button">
+        <input type="submit" value="S'inscrire">
+      </div>
+      <div class="text">
+        <h3>Vous avez déjà un compte ? <a routerLink="/login"> Connectez-vous!</a></h3>
+      </div>
+    </form>
+  </div>
+</body>

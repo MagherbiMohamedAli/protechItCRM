@@ -1,0 +1,14 @@
+# Ignore compiled output
+/dist/
+
+# Ignore node_modules directory
+/node_modules/
+
+# Ignore cache directories
+Frontend/.angular/cache/
+
+# Ignore log files
+*.log
+
+# Ignore specific files
+secret.txt

@@ -1,0 +1,114 @@
+<body>
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <img src="../assets/images/protext.png" alt="protechLogo"
+                style="width: 200px; height: 50px; margin-left: 15px; margin-top: 10px;">
+            <span class="logo_name"></span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a routerLink="/admindashboard" class="active">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/adminslist">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Admins</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/clientslist">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Clients</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/userslist">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Tous les utilisateurs</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/chatadmin">
+                    <i class='bx bx-message'></i>
+                    <span class="links_name">Messages</span>
+                </a>
+            </li>
+
+            <li class="log_out">
+                <a (click)="signOut()">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Se déconnecter</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <span class="dashboard">Tableau de bord</span>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Rechercher..">
+                <i class='bx bx-search'></i>
+            </div>
+            <a routerLink="/profile">
+                <div class="profile-details" *ngFor="let user of users">
+                    <img src="../assets/images/user.jpg" alt="adminphoto">
+                    <span class="admin_name">#{{user.id}} {{ user.username }}</span>
+                </div>
+            </a>
+        </nav>
+
+        <div class="home-content">
+            <div class="overview-boxes">
+                <div class="box">
+                    <div class="right-side">
+
+                        <div class="box-topic"> Nombre des clients <i class='bx bx-user'></i></div>
+                        <div class="number" style="margin-left: 70px;"> {{nbrOfClients}}</div>
+
+                    </div>
+
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Nombre des admins<i class='bx bx-user'></i></div>
+                        <div class="number" style="margin-left: 80px;">{{nbrOfAdmins}}</div>
+
+                    </div>
+
+                </div>
+
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Nombre des utilisateurs<i class='bx bx-user'></i></div>
+                        <div class="number" style="margin-left: 100px;">{{nbrOfUsers}}</div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="sales-boxes">
+                <div class="recent-sales box">
+                    <div class="title">Nouveaux messages</div>
+
+                </div>
+                <div class="top-sales box">
+                    <div class="title">Nouveaux utilisateurs</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    

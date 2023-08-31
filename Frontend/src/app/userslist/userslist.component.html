@@ -1,0 +1,28 @@
+<body style="background-image: url('../assets/images/protechbg.jpg');">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+
+                    <div class="col-2" *ngFor="let user of users">
+                        <div class="card" style="background-color: burlywood;">
+                            <img class="card-img-top" src="../assets/images/user.jpg" alt="userphoto">
+                            <div class="card-body" >
+                                <h2 class="card-title">#{{user.id}} {{ user.nomEtPrenom }}</h2>
+                                <h6> Email: <a [href]="'mailto:' + user.email">{{ user.email }}</a></h6>
+                                <h6> Date de naissance: {{ user.birthdate }}</h6>
+                                <h6>Créé le: {{ user.created }} par pc de {{user.creator}}</h6>
+                                <h6>Modifié le: {{user.modified}} par pc de {{user.modifier}}</h6>
+                                <h6 *ngFor="let role of user.roles">{{role.role}}</h6>
+
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>

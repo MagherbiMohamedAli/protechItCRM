@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card chat-app">
+
+                <div class="chat">
+                    <div class="chat-header clearfix">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                <div class="chat-about">
+                                    <h6 class="m-b-0">Support protech-it</h6>
+                                    <small>Disponible</small>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="chat-history" #chatHistory style="max-height: 400px; overflow-y: scroll;">
+                        <ul class="m-b-0">
+                            <li *ngFor="let message of messages | async" class="clearfix">
+                                <div class="message-data"
+                                    [ngClass]="{'text-right': message.myMsg, 'text-left': !message.myMsg}">
+                                    <span class="message-data-time"></span>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                    <div class="row">
+                                        <div class="col"
+                                            [ngClass]="{'my-message': message.myMsg, 'other-message': !message.myMsg}">
+                                            <b>{{message.from}}</b> <br>
+                                            <span>{{message.msg}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="chat-message clearfix">
+                        <div class="input-group mb-0">
+                            <div class="input-group-prepend">
+                            </div>
+                            <textarea type="text" [(ngModel)]="newMsg" class="form-control"
+                                placeholder="Ecrivez votre message ici..." (keydown)="onKeyDown($event)"></textarea>
+                            <button style="border-color: white" [disabled]="newMsg === ''" (click)="sendMessage()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #1E73BE;"><path d="m21.426 11.095-17-8A1 1 0 0 0 3.03 4.242l1.212 4.849L12 12l-7.758 2.909-1.212 4.849a.998.998 0 0 0 1.396 1.147l17-8a1 1 0 0 0 0-1.81z"></path></svg>
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

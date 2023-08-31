@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<body style="background-image: url('../assets/images/protechbg.jpg');">
+  <div class="wrapper">
+    <h2>Modifier vos coordonnées</h2>
+
+    <form>
+      <div class="input-box">
+        <input type="text" name="username" placeholder="Changer votre nom ou prenom" [(ngModel)]="user.username">
+      </div>
+      <div class="input-box">
+        <input type="text" name="email" placeholder="Changer votre email" [(ngModel)]="user.email">
+      </div>
+      <div class="input-box">
+        <input type="date" name="birthdate" placeholder="Changer votre date de naissance" [(ngModel)]="user.birthday">
+      </div>
+
+      <div class="input-box">
+        <input type="password" name="password" placeholder="Saisir votre mot de passe" [(ngModel)]="user.password">
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Saisir votre nouveau mot de passe" required>
+      </div>
+
+   
+      <div class="input-box button">
+        <input type="Submit" (click)="modifierProfil()" value="Modifier!">
+      </div>
+
+    </form>
+  </div>
+</body>
+<app-footer></app-footer>
