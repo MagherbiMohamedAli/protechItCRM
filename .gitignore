@@ -12,3 +12,5 @@ Frontend/.angular/cache/
 
 # Ignore specific files
 secret.txt
+# Local Netlify folder
+.netlify

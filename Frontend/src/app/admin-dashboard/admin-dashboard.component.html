@@ -1,14 +1,13 @@
 <body>
 
     <div class="sidebar">
-        <div class="logo-details">
+        <div>
             <img src="../assets/images/protext.png" alt="protechLogo"
                 style="width: 200px; height: 50px; margin-left: 15px; margin-top: 10px;">
-            <span class="logo_name"></span>
         </div>
         <ul class="nav-links">
             <li>
-                <a routerLink="/admindashboard" class="active">
+                <a routerLink="/admindashboard">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Dashboard</span>
                 </a>
@@ -50,13 +49,10 @@
 
     <section class="home-section">
         <nav>
-            <div class="sidebar-button">
-                <span class="dashboard">Tableau de bord</span>
+            <div>
+                <h3><span class="dashboard">Tableau de bord</span></h3>
             </div>
-            <div class="search-box">
-                <input type="text" placeholder="Rechercher..">
-                <i class='bx bx-search'></i>
-            </div>
+
             <a routerLink="/profile">
                 <div class="profile-details" *ngFor="let user of users">
                     <img src="../assets/images/user.jpg" alt="adminphoto">
@@ -68,28 +64,32 @@
         <div class="home-content">
             <div class="overview-boxes">
                 <div class="box">
-                    <div class="right-side">
+                    <div>
 
-                        <div class="box-topic"> Nombre des clients <i class='bx bx-user'></i></div>
-                        <div class="number" style="margin-left: 70px;"> {{nbrOfClients}}</div>
+                        <div><b> Nombre des clients</b> <i class='bx bx-user'></i></div>
+                        <h2>
+                            <div style="margin-left: 70px;"> {{nbrOfClients}}</div>
+                        </h2>
 
                     </div>
 
                 </div>
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Nombre des admins<i class='bx bx-user'></i></div>
-                        <div class="number" style="margin-left: 80px;">{{nbrOfAdmins}}</div>
-
+                        <div class="box-topic"><b>Nombre des admins</b><i class='bx bx-user'></i></div>
+                        <h2>
+                            <div style="margin-left: 80px;">{{nbrOfAdmins}}</div>
+                        </h2>
                     </div>
 
                 </div>
 
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Nombre des utilisateurs<i class='bx bx-user'></i></div>
-                        <div class="number" style="margin-left: 100px;">{{nbrOfUsers}}</div>
-
+                        <div class="box-topic"><b>Nombre des utilisateurs</b><i class='bx bx-user'></i></div>
+                        <h2>
+                            <div style="margin-left: 100px;">{{nbrOfUsers}}</div>
+                        </h2>
                     </div>
 
                 </div>
@@ -100,15 +100,13 @@
 
             <div class="sales-boxes">
                 <div class="recent-sales box">
-                    <div class="title">Nouveaux messages</div>
+                    <div class="title"><h3>Nouveaux messages</h3></div>
 
                 </div>
                 <div class="top-sales box">
-                    <div class="title">Nouveaux utilisateurs</div>
+                    <div class="title"><h3>Nouveaux utilisateurs</h3></div>
 
                 </div>
             </div>
         </div>
     </section>
-
-    
