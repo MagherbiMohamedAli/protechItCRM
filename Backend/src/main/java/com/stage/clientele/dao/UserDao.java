@@ -13,7 +13,6 @@ import java.util.Optional;
 public interface UserDao extends JpaRepository<User, Long> {
     User findByEmailAndPassword(String email, String password);
     Optional<User> findByEmail(String email);
-
     User findByBirthday(Date birthday);
     List<User> findUsersByRoles(Role role);
     Integer countUserByRoles(Role role);

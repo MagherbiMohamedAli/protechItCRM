@@ -21,8 +21,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-
-
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -32,8 +30,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.social.facebook.api.Facebook;
 import org.springframework.social.facebook.api.impl.FacebookTemplate;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
 
 import java.io.IOException;
 import java.util.Collections;
@@ -43,8 +39,8 @@ import java.util.Set;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/Auth")
-public class AuthController {
 
+public class AuthController {
     @Autowired
     UserDao userDao;
     @Autowired
@@ -53,14 +49,10 @@ public class AuthController {
     RoleDao roleDao;
     @Autowired
     AuthenticationManager authenticationManager;
-
     @Autowired
     PasswordEncoder encoder;
-
     @Autowired
     JwtProvider jwtProvider;
-
-
 
     @PostMapping("/Connexion")
     public ResponseEntity<?> connexion(@RequestBody LoginRequest loginRequest) {
@@ -76,8 +68,6 @@ public class AuthController {
         } catch (AuthenticationException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
         }
-
-
     }
 
 
@@ -140,6 +130,7 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
         }
         }
+
     @PostMapping("/LoginWithGoogle")
     public ResponseEntity<?> LoginWithGoogle(@RequestBody TokenDto tokenDto) throws IOException {
         String idSocial = "22912923160-73j5ffvl252j672k4mfltv2qbd7j7mdk.apps.googleusercontent.com";

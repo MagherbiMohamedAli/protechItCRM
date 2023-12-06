@@ -15,7 +15,6 @@ import java.util.Set;
 @ToString
 @Entity
 public class User extends AuditModel {
-
     @NotBlank
     @Column(nullable = false)
     @NotEmpty
